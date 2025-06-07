@@ -29,8 +29,8 @@ export default function Home() {
           <Image
             src="/ilustration.svg?height=400&width=400"
             alt="Собака и кошка"
-            width={400}
-            height={400}
+            width={500}
+            height={500}
             className="mx-auto"
           />
         </div>
