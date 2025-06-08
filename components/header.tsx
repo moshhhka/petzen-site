@@ -36,7 +36,7 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center">
           <h1 className="text-2xl font-bold">
-            <span className={scrolled ? "text-black" : "text-black"}>Pet</span>
+            <span className="text-black">Pet</span>
             <span className={scrolled ? "text-white" : "text-yellow-500"}>Zen</span>
           </h1>
         </div>
