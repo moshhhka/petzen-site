@@ -9,33 +9,23 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section id="home" className="container mx-auto px-4 py-8 md:py-12 flex flex-col md:flex-row items-center">        
+      <section id="home" className="container mx-auto px-4 py-8 md:py-12 flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 mb-8 md:mb-0">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Лучшая поддержка в уходе за вашим <br />
-            <span className="text-yellow-500">лучшим другом</span>
+            Лучшая поддержка в уходе за вашим <span className="text-yellow-500">лучшим другом</span>
           </h2>
           <p className="text-gray-600 mb-6 max-w-md">
-            Здесь вы найдете ответы на все ваши вопросы, от выбора лучшего корма до важных советов по обеспечению
-            благополучия вашего пушистого компаньона.
+            Здесь вы найдете ответы на все ваши вопросы, от выбора лучшего корма до важных советов по обеспечению благополучия вашего пушистого компаньона.
           </p>
-          <Link
-            href="#"
-            className="bg-yellow-500 text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-yellow-600 transition-colors inline-block"
-          >
+          <Link href="#" className="bg-yellow-500 text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-yellow-600 transition-colors inline-block">
             Войти
           </Link>
         </div>
         <div className="md:w-1/2">
-          <Image
-            src="/ilustration.svg?height=400&width=400"
-            alt="Собака и кошка"
-            width={500}
-            height={500}
-            className="mx-auto"
-          />
+          <Image src="/ilustration.svg?height=400&width=400" alt="Собака и кошка" width={500} height={500} className="mx-auto" />
         </div>
       </section>
+
 
       {/* Features Section */}
       <section id="services" className="container mx-auto px-4 py-12">
@@ -43,76 +33,24 @@ export default function Home() {
           Узнайте важные советы, чтобы обеспечить комфорт, которого заслуживает ваш питомец!
         </h3>
 
+        {/* Карточки с преимуществами */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Feature 1 */}
-          <div className="bg-white p-6 rounded-lg border border-gray-100 text-center">
-            <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🐕</span>
+          {[
+            { icon: "🐕", title: "Дрессировка", text: "Профессиональные советы по обучению вашего питомца для поддержания гармоничных отношений с вами." },
+            { icon: "🍗", title: "Питание", text: "Узнайте, как выбрать лучшее питание, избегая токсичных продуктов и поддерживая идеальный вес." },
+            { icon: "🏠", title: "Усыновление", text: "Найдите идеального питомца для вашего дома и образа жизни, узнайте, как провести тест и какое животное выбрать для лучшей связи." },
+            { icon: "🩺", title: "Здоровье", text: "Научитесь распознавать тревожные сигналы о здоровье вашего питомца и предотвращать болезни с помощью наших советов." },
+            { icon: "🧼", title: "Уход", text: "Изучите уход за зубами, чистку ушей и многое другое для поддержания гигиены вашего питомца." },
+            { icon: "🧩", title: "Интересные факты", text: "Изучите советы по поведению в период адаптации, узнайте детали об идеальном распорядке дня." },
+          ].map((feature, index) => (
+            <div key={index} className="bg-white p-6 rounded-lg border border-gray-100 text-center">
+              <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">{feature.icon}</span>
+              </div>
+              <h4 className="font-semibold mb-2">{feature.title}</h4>
+              <p className="text-gray-600 text-sm">{feature.text}</p>
             </div>
-            <h4 className="font-semibold mb-2">Дрессировка</h4>
-            <p className="text-gray-600 text-sm">
-              Профессиональные советы по обучению вашего питомца для поддержания гармоничных отношений с вами.
-            </p>
-          </div>
-
-          {/* Feature 2 */}
-          <div className="bg-white p-6 rounded-lg border border-gray-100 text-center">
-            <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🍗</span>
-            </div>
-            <h4 className="font-semibold mb-2">Питание</h4>
-            <p className="text-gray-600 text-sm">
-              Узнайте, как выбрать лучшее питание, избегая токсичных продуктов и поддерживая идеальный вес.
-            </p>
-          </div>
-
-          {/* Feature 3 */}
-          <div className="bg-white p-6 rounded-lg border border-gray-100 text-center">
-            <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🏠</span>
-            </div>
-            <h4 className="font-semibold mb-2">Усыновление</h4>
-            <p className="text-gray-600 text-sm">
-              Найдите идеального питомца для вашего дома и образа жизни, узнайте, как провести тест и какое животное
-              выбрать для лучшей связи.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-          {/* Feature 4 */}
-          <div className="bg-white p-6 rounded-lg border border-gray-100 text-center">
-            <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🩺</span>
-            </div>
-            <h4 className="font-semibold mb-2">Здоровье</h4>
-            <p className="text-gray-600 text-sm">
-              Научитесь распознавать тревожные сигналы о здоровье вашего питомца и предотвращать болезни с помощью наших
-              советов.
-            </p>
-          </div>
-
-          {/* Feature 5 */}
-          <div className="bg-white p-6 rounded-lg border border-gray-100 text-center">
-            <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🧼</span>
-            </div>
-            <h4 className="font-semibold mb-2">Уход</h4>
-            <p className="text-gray-600 text-sm">
-              Изучите уход за зубами, чистку ушей и многое другое для поддержания гигиены вашего питомца.
-            </p>
-          </div>
-
-          {/* Feature 6 */}
-          <div className="bg-white p-6 rounded-lg border border-gray-100 text-center">
-            <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🧩</span>
-            </div>
-            <h4 className="font-semibold mb-2">Интересные факты</h4>
-            <p className="text-gray-600 text-sm">
-              Изучите советы по поведению в период адаптации, узнайте детали об идеальном распорядке дня.
-            </p>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -134,85 +72,57 @@ export default function Home() {
           </div>
           <div className="md:w-1/2">
             <Image
-              src="/group ilustration.svg?height=300&width=300"
-              alt="Иллюстрация питомца"
-              width={300}
-              height={300}
-              className="mx-auto"
+              src="/group ilustration.svg?height=300&width=300" alt="Иллюстрация питомца" width={300} height={300} className="mx-auto"
             />
           </div>
         </div>
       </section>
 
       {/* App Download Section */}
-      <section id="app" className="container mx-auto px-4 py-8">
+      <section id="app" className="container mx-auto p-6 md:p-8">
         <div className="flex flex-col md:flex-row items-center">
+          {/* Изображение */}
           <div className="md:w-1/2">
-            <Image
-              src="/iphone.svg?height=600&width=500"
-              alt="Скриншот приложения"
-              width={500}
-              height={600}
-              className="mx-auto"
-            />
+            <Image src="/iphone.svg?height=600&width=500" alt="Скриншот приложения" width={500} height={600} className="mx-auto" />
           </div>
+
+
+          {/* Контент */}
           <div className="md:w-1/2">
             <h3 className="text-2xl font-bold mb-6">СКАЧАЙТЕ НАШЕ ПРИЛОЖЕНИЕ!</h3>
 
-            <div className="mb-6">
-              <div className="flex items-start mb-2">
+            {/* Список преимуществ */}
+            {[
+              {
+                title: "Умные уведомления и напоминания",
+                description:
+                  "Получайте персонализированные уведомления о прививках, визитах к ветеринару и других потребностях, гарантируя, что вы ничего не забудете.",
+              },
+              {
+                title: "Удобный интерфейс для всех",
+                description:
+                  "Простой и интуитивно понятный дизайн, чтобы все члены семьи, независимо от цифрового опыта, могли получить доступ к той же информации приложения.",
+              },
+              {
+                title: "Интуитивный и привлекательный дизайн",
+                description: "Наслаждайтесь визуально приятным и простым в навигации интерфейсом, разработанным для обеспечения плавного и приятного опыта для каждого пользователя.",
+              },
+            ].map((feature, index) => (
+              <div key={index} className="flex items-start mb-6">
                 <div className="mr-3 mt-1">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                     <rect width="24" height="24" rx="12" fill="#FFC107" />
                     <path d="M8 12L11 15L16 9" stroke="white" strokeWidth="2" />
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-semibold">Умные уведомления и напоминания</h4>
-                  <p className="text-gray-600 text-sm">
-                    Получайте персонализированные уведомления о прививках, визитах к ветеринару и других потребностях,
-                    гарантируя, что вы ничего не забудете.
-                  </p>
+                  <h4 className="font-semibold">{feature.title}</h4>
+                  <p className="text-gray-600 text-sm">{feature.description}</p>
                 </div>
               </div>
-            </div>
+            ))}
 
-            <div className="mb-6">
-              <div className="flex items-start mb-2">
-                <div className="mr-3 mt-1">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="24" height="24" rx="12" fill="#FFC107" />
-                    <path d="M8 12L11 15L16 9" stroke="white" strokeWidth="2" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="font-semibold">Удобный интерфейс для всех</h4>
-                  <p className="text-gray-600 text-sm">
-                    Простой и интуитивно понятный дизайн, чтобы все члены семьи, независимо от цифрового опыта, могли
-                    получить доступ к той же информации приложения.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mb-6">
-              <div className="flex items-start mb-2">
-                <div className="mr-3 mt-1">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="24" height="24" rx="12" fill="#FFC107" />
-                    <path d="M8 12L11 15L16 9" stroke="white" strokeWidth="2" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="font-semibold">Интуитивный и привлекательный дизайн</h4>
-                  <p className="text-gray-600 text-sm">
-                    Наслаждайтесь визуально приятным и простым в навигации интерфейсом, разработанным для обеспечения
-                    плавного и приятного опыта для каждого пользователя.
-                  </p>
-                </div>
-              </div>
-            </div>
-
+            {/* Кнопка скачивания */}
             <Link href="#" className="inline-block">
               <Image src="/button app.svg?height=50&width=150" alt="Скачать в App Store" width={150} height={50} />
             </Link>
@@ -220,161 +130,77 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* Testimonials Section */}
-      <section id="testimonials" className="container mx-auto px-4 py-12 mt-[-40px]">
+      <section id="testimonials" className="container mx-auto px-4 py-12 mt-[-60px]">
         <h3 className="text-xl md:text-2xl font-semibold text-center mb-10">
           Узнайте, что пользователи Pet<span className="text-yellow-500">Zen</span> думают о приложении!
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Testimonial 1 */}
-          <div className="bg-white p-6 rounded-lg border border-gray-100 relative">
-            <div className="absolute top-4 right-4 w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
-              <Image
-                src="/fi-rr-paw.svg?height=20&width=20"
-                alt="Иконка"
-                width={20}
-                height={20}
-                className="object-contain"
-              />
-            </div>
-            <div className="flex items-center mb-4">
-              <Image
-                src="/ian-dooley-d1UPkiFd04A-unsplash 1.svg?height=60&width=60"
-                alt="Карлос Сантана"
-                width={60}
-                height={60}
-                className="rounded-full mr-3"
-              />
-              <div>
-                <h4 className="font-semibold">Карлос Сантана</h4>
-                <p className="text-gray-600 text-xs">Владелец кошек</p>
+          {[
+            {
+              name: "Карлос Сантана",
+              role: "Владелец кошек",
+              image: "/ian-dooley-d1UPkiFd04A-unsplash 1.svg?height=60&width=60",
+              review: "Приложение упростило лечение и держит меня в курсе здоровья моего пушистого друга. Я больше никогда не забываю о прививке или визите к врачу. Рекомендую всем любителям животных!",
+            },
+            {
+              name: "Джованна Лима",
+              role: "Владелец собак",
+              image: "/suad-kamardeen-khewjy5l4Zo-unsplash 2.svg?height=60&width=60",
+              review: "С тех пор как я начала использовать приложение, я заметила положительные изменения в поведении моего питомца! Советы невероятные, а сообщество очень поддерживающее!",
+            },
+            {
+              name: "Регина Сантос",
+              role: "Владелец питомцев",
+              image: "/christian-buehner-DItYlc26zVI-unsplash 1.svg?height=60&width=60",
+              review: "Приложение не только напоминает мне о прививках и визитах, но и подключило меня к невероятному сообществу владельцев питомцев!",
+            },
+          ].map((testimonial, index) => (
+            <div key={index} className="bg-white p-6 rounded-lg border border-gray-100 relative w-full">
+              <div className="absolute top-4 right-4 w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
+                <Image src="/fi-rr-paw.svg?height=20&width=20" alt="Иконка" width={20} height={20} className="object-contain" />
               </div>
-            </div>
-            <p className="text-gray-600 text-sm">
-              Приложение упростило лечение и держит меня в курсе здоровья моего пушистого друга. Я больше никогда не
-              забываю о прививке или визите к врачу. Рекомендую всем любителям животных!
-            </p>
-          </div>
-
-          {/* Testimonial 2 */}
-          <div className="bg-white p-6 rounded-lg border border-gray-100 relative">
-            <div className="absolute top-4 right-4 w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
-              <Image
-                src="/fi-rr-paw.svg?height=20&width=20"
-                alt="Иконка"
-                width={20}
-                height={20}
-                className="object-contain"
-              />
-            </div>
-            <div className="flex items-center mb-4">
-              <Image
-                src="/suad-kamardeen-khewjy5l4Zo-unsplash 2.svg?height=60&width=60"
-                alt="Джованна Лима"
-                width={60}
-                height={60}
-                className="rounded-full mr-3"
-              />
-              <div>
-                <h4 className="font-semibold">Джованна Лима</h4>
-                <p className="text-gray-600 text-xs">Владелец собак</p>
+              <div className="flex items-center mb-4">
+                <Image src={testimonial.image} alt={testimonial.name} width={60} height={60} className="rounded-full mr-3" />
+                <div>
+                  <h4 className="font-semibold">{testimonial.name}</h4>
+                  <p className="text-gray-600 text-xs">{testimonial.role}</p>
+                </div>
               </div>
+              <p className="text-gray-600 text-sm">{testimonial.review}</p>
             </div>
-            <p className="text-gray-600 text-sm">
-              С тех пор как я начала использовать приложение, я заметила положительные изменения в поведении моего
-              питомца! Советы невероятные, а сообщество очень поддерживающее!
-            </p>
-          </div>
-
-          {/* Testimonial 3 */}
-          <div className="bg-white p-6 rounded-lg border border-gray-100 relative">
-            <div className="absolute top-4 right-4 w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
-              <Image
-                src="/fi-rr-paw.svg?height=20&width=20"
-                alt="Иконка"
-                width={20}
-                height={20}
-                className="object-contain"
-              />
-            </div>
-            <div className="flex items-center mb-4">
-              <Image
-                src="/christian-buehner-DItYlc26zVI-unsplash 1.svg?height=60&width=60"
-                alt="Регина Сантос"
-                width={60}
-                height={60}
-                className="rounded-full mr-3"
-              />
-              <div>
-                <h4 className="font-semibold">Регина Сантос</h4>
-                <p className="text-gray-600 text-xs">Владелец питомцев</p>
-              </div>
-            </div>
-            <p className="text-gray-600 text-sm">
-              Приложение не только напоминает мне о прививках и визитах, но и подключило меня к невероятному сообществу
-              владельцев питомцев!
-            </p>
-          </div>
+          ))}
         </div>
       </section>
 
       {/* Newsletter Section */}
-      <section id="newsletter" className="container mx-auto px-4 py-12">
+      <section id="newsletter" className="container mx-auto px-4 py-2">
         <div className="flex flex-col md:flex-row items-center">
+          {/* Левый блок с текстом */}
           <div className="md:w-1/2 mb-8 md:mb-0">
             <h3 className="text-2xl font-bold mb-4">Не пропустите наши обновления!</h3>
             <p className="text-gray-600 mb-6">
               Зарегистрируйтесь, чтобы получать новости, новые инструменты, акции и многое другое.
             </p>
 
-            <div className="mb-4">
-              <div className="flex items-center mb-2">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="mr-2"
-                >
+            {/* Динамически рендерим список преимуществ */}
+            {[
+              "Получайте обновления первыми",
+              "Получайте купоны на скидки",
+              "Читайте статьи на актуальные темы",
+            ].map((text, index) => (
+              <div key={index} className="flex items-center mb-2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="mr-2">
                   <rect width="24" height="24" rx="12" fill="#FFC107" />
                   <path d="M8 12L11 15L16 9" stroke="white" strokeWidth="2" />
                 </svg>
-                <p className="text-gray-600 text-sm">Получайте обновления первыми</p>
+                <p className="text-gray-600 text-sm">{text}</p>
               </div>
+            ))}
 
-              <div className="flex items-center mb-2">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="mr-2"
-                >
-                  <rect width="24" height="24" rx="12" fill="#FFC107" />
-                  <path d="M8 12L11 15L16 9" stroke="white" strokeWidth="2" />
-                </svg>
-                <p className="text-gray-600 text-sm">Получайте купоны на скидки</p>
-              </div>
-
-              <div className="flex items-center mb-2">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="mr-2"
-                >
-                  <rect width="24" height="24" rx="12" fill="#FFC107" />
-                  <path d="M8 12L11 15L16 9" stroke="white" strokeWidth="2" />
-                </svg>
-                <p className="text-gray-600 text-sm">Читайте статьи на актуальные темы</p>
-              </div>
-            </div>
-
+            {/* Поле ввода email */}
             <div className="flex mt-6">
               <input
                 type="email"
@@ -382,7 +208,7 @@ export default function Home() {
                 className="px-4 py-2 border border-gray-300 rounded-l-full w-full focus:outline-none"
               />
               <button className="bg-yellow-500 text-white px-4 py-2 rounded-r-full">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <path
                     d="M5 12H19M19 12L12 5M19 12L12 19"
                     stroke="white"
@@ -394,12 +220,10 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className="md:w-1/2 mb-12">
-            <div className="relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Image src="/illustration2.svg?height=300&width=300" alt="Иллюстрация собаки" width={300} height={300} />
-              </div>
-            </div>
+
+          {/* Блок с изображением */}
+          <div className="md:w-1/2 mb-12 flex items-center justify-center">
+            <Image src="/illustration2.svg" alt="Иллюстрация" width={300} height={300} />
           </div>
         </div>
       </section>
