@@ -9,7 +9,8 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section id="home" className="container mx-auto px-4 py-8 md:py-12 flex flex-col md:flex-row items-center">        <div className="md:w-1/2 mb-8 md:mb-0">
+      <section id="home" className="container mx-auto px-4 py-8 md:py-12 flex flex-col md:flex-row items-center">        
+        <div className="md:w-1/2 mb-8 md:mb-0">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Лучшая поддержка в уходе за вашим <br />
             <span className="text-yellow-500">лучшим другом</span>
